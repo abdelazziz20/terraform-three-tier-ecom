@@ -1,8 +1,8 @@
 terraform {
   backend "s3" {
-    bucket = "devops-00237"
+    bucket = "rdsmigbucket"
     key    = "state/terraform.tfstate"
-    region = "us-east-1"
+    region = "us-east-2"
     workspace_key_prefix  = "env"
   }
 }
