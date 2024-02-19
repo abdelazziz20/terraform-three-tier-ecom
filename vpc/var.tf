@@ -31,7 +31,7 @@ variable "private_subnet2_cidr_block" {
 variable "availability_zones" {
     type = list(string)
     description = "(optional) describe your variable"
-    default = [ "us-east-1a", "us-east-1b" ]
+    default = [ "us-east-2a", "us-east-2b" ]
 }
 
 variable "tags" {
