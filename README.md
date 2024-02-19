@@ -1,4 +1,4 @@
-# terraform-3-tier-infra
+# terraform-3-tier-ecom-infra
 3 tier aws infra with terraform
 
 ## Project setup
