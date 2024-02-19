@@ -15,7 +15,7 @@ resource "aws_instance" "web" {
 
 resource "aws_security_group" "web_server_sg" {
   name        = "${var.tags["project"]}-${var.tags["application"]}-${var.tags["environment"]}-web-server-sg"
-  description = "Allow web traffic"
+  description = "Allow ssh and web traffic"
   vpc_id      = var.vpc_id 
   ingress {
     description      = "traffic port"
@@ -29,6 +29,14 @@ resource "aws_security_group" "web_server_sg" {
     description      = "traffic port"
     from_port        = 443
     to_port          = 443
+    protocol         = "tcp"
+    cidr_blocks      = ["0.0.0.0/0"]
+  }
+
+  ingress {
+    description      = "traffic port"
+    from_port        = 22
+    to_port          = 22
     protocol         = "tcp"
     cidr_blocks      = ["0.0.0.0/0"]
   }
